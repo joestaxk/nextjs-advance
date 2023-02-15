@@ -1,0 +1,308 @@
+// Pages styling
+@use "./variables.module.scss";
+
+
+
+
+.pagePanel {
+   padding: 5px;
+   color: variables.$text-shades;
+}
+
+@mixin svg_icon_link {
+  .svg_icon {
+    margin-right: .4rem;
+    width: 40px;
+    height: 40px;
+    background: variables.$nav-background;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    svg {
+      font-size: clamp(20px, 1rem, 0.5rem);
+    }
+  }
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    h2 {
+      font-size: 2.6rem;
+      font-weight: 500;
+    }
+    
+    .mobile_icon_sidebar {
+      min-width: 40px;
+      min-height: 30px;
+      border-radius: 40px;
+      border: 1px solid rgba(66, 66, 125, 0.527);
+      border-left: none;
+      transition: .5s border;
+      
+      &:hover {
+        border: 1px solid rgba(66, 66, 125, 0.996);
+        border-left: none;
+      }
+      
+      .current_icon  {
+        position: relative;
+        width:80px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .svg_icon {
+          margin-left: -1.2rem;
+        }
+        
+        .navigate {
+          position: relative;
+          margin-left:.5rem;
+          z-index: 1;
+          cursor: pointer;
+          
+          svg {
+            font-weight: bold;
+            margin-right: .5rem;
+            transition: .2s opacity;
+            position: absolute; 
+            top: -.5rem;
+            z-index: 0;
+          }
+          
+          [data-caret="false"] {
+            opacity: 0;
+          }
+          [data-caret="true"] {
+            opacity: 1;
+          }
+        }
+        
+        @include svg_icon_link
+      }
+      
+      .links {
+        background: variables.$text-shades;
+        position: absolute;
+        margin-left: -.5rem;
+        margin-top: .2rem;
+        border-radius: 50px;
+        width: 50px;
+        height: 100;
+        overflow: hidden;
+        opacity: 0;
+        padding-left: .4rem;
+        padding-top: .4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        
+        @include svg_icon_link;
+        
+        .svg_icon {
+          margin-bottom: .5rem;
+          background: variables.$text-shades;
+          box-shadow: inset -2px 1px 5px #000;
+          cursor: pointer;
+          transition: .5s all;
+          
+          &:hover {
+            
+          }
+        }
+        
+        @for $i from 1 through 7 {
+          .svg_icon:nth-child(3n + #{$i}) {
+            margin-left: $i * 2rem;
+            opacity: 0;
+          }
+        }
+        
+      }
+      
+    }
+    
+    .headerUtilities {
+      min-width: 200px;
+      display: flex;
+      align-items: center;
+      
+      .notification {
+        position: relative;
+        margin-right: .8rem;
+        
+        svg {
+           font-size: 30px
+        }
+        
+       .notification_dot{
+         width: 10px;
+         height: 10px;
+         background: rgb(10, 212, 10);
+         border-radius: 50%;
+         position: absolute;
+         top: 3px;
+         right: 3px;
+       }
+     }
+     
+     .searchMuse{
+      position: relative;
+       width: 250px;
+       height: 40px;
+       border-radius: .3rem;
+       box-shadow: 3px 4px 11px variables.$dull-background;
+       font-size: 14px;
+       
+       &:focus-within {
+       }
+       
+       input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        appearance: none;
+        outline: none;
+        border: none;
+        border-radius: .3rem;
+        background: transparent;
+        padding: 5px;
+        padding-left: 2rem;
+       }
+     }
+    }
+}
+
+// Main 
+.homeComponentGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  transition: .4s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  overflow-y: auto;
+  gap: 1rem;
+  
+  .column_one, .column_two {
+    padding: 1rem;
+    display: grid;
+  }
+  
+  
+  .column_one{
+     gap: 1rem;
+  }
+  
+  .column_two{
+    grid-template-rows: 400px auto;
+    gap: 1rem;
+  }
+  
+}
+
+// tablet 
+@media screen and (max-width: 1450px) {
+  .homeComponentGrid{ 
+    width: 100%;
+    grid-template-columns: auto 300px;
+  }
+}
+
+
+
+// CAROUSEL
+.carousel_container {
+ position: relative;
+ 
+ .carousel_navigate {
+    position: absolute;
+    top: calc(400px / 2.3);
+    right: 40px;
+    z-index: 99;
+    
+    [data-carousel_active_id] {
+      height: 10px;
+      border-radius: 35%;
+      background: rgb(255, 255, 255);
+      transition: .5s all;
+    }
+    div {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: variables.$dull-background;
+      margin: 5px 0px;
+      cursor: pointer;
+      transition: .5s all;
+    }
+  }
+
+}
+.carousel {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 2rem;
+  background-color: #212121;
+  
+  .carousel_trail {
+   transition: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    min-height: 100%;
+  }
+}
+
+.carousel_item {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: whitesmoke;
+    padding-left: 2rem;
+    
+    .carousel_name, .carousel_more {
+      color: rgb(199, 199, 199);
+    }
+    .carousel_title {
+      font-size: 3rem;
+      font-weight: 500;
+      color: #fff;
+      word-wrap: break-word;
+      width: 400px;
+    }
+    
+    .carousel_more {
+      font-size: 1.1rem;
+      width: 380px;
+    }
+    
+    .carousel_button {
+       border: none;
+       appearance: none;
+       min-width: 100px;
+       margin-top: 1rem;
+       padding: .8rem 1rem;
+       background: #212121;
+       color: #fff;
+       border-radius: 1.5rem;
+       cursor: pointer;
+       font-size: 1rem;
+    }
+}
+
+ 
+//  MEDIA
+@import './mediascreen/tablet.module.scss';
+ 

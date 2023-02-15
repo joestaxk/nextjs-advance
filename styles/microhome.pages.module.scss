@@ -1,0 +1,115 @@
+// ---------------------------- TOP ARTIST ------------------------------
+@use "./variables.module.scss";
+
+.topArtist_container, .trending_container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: variables.$text-shades;
+}
+
+@mixin centered {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topArtist, .trendingNow {
+  @include centered;
+    
+   line-height: 60px;
+   h2 {
+      font-size: 2rem;
+      font-weight: 500;
+   }
+   .trending_see_all a, .topArtist_see_all a {
+      color: cornflowerblue;
+   }
+}
+
+.artist_list, .trending_list {
+   margin-top: .9rem;
+}
+
+.artist, .trending {
+   @include centered;
+   margin-bottom: 1rem;
+   
+   .trending_info_icon {
+      display: flex;
+   }
+   .artist_info_icon svg, .trending_info_icon svg {
+     font-size: 2rem;
+     font-weight: bold;
+     cursor: pointer;
+     margin-left: 2rem;
+   }
+   
+   .trending_music_info {
+      display: flex;
+      div {
+         font-size: .9rem;
+         font-weight: bold;
+      }
+      .trending_music_duration {
+         margin-right: 1.5rem;
+      }
+      .trending_music_play_count {
+         color: darkgray;
+      }
+   }
+   
+   .artist_data, .trending_data {
+     display: flex;
+     align-items: center;
+     
+      img {
+         border-radius: 15px;
+       }
+       
+       .trending_numbering{
+         margin-right: 1rem;
+         font-size: 2rem;
+         font-weight: bold;
+         color: darkgrey;
+       }
+       
+    .artist_info, .trending_info {
+        margin-left: .9rem;
+        
+        h3 {
+           font-weight: 550;
+           font-size: 1.3rem;
+        }
+        
+        .artist_records, .trending_records {
+           display: flex;
+           div {
+              margin-right: .9rem;
+              color: variables.$dull-background;
+              font-size: calc(1rem / 1.2);
+              font-weight: 500;
+           }
+        }
+        
+        .trending_records {
+            div {
+               @include centered;
+               svg {
+                 margin-right: .3rem;
+               }
+            }
+        }
+        
+    }
+   }
+}
+
+
+
+// Recent FAVOURITE 
+
+
+
+// Tablet - media queries
+@import './mediascreen/tablet.module.scss';

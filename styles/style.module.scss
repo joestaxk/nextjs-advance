@@ -1,0 +1,43 @@
+// Miscellaneous file.
+@use "./variables.module.scss";
+
+.mainBody {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  
+  .grab{
+    position: absolute;
+    top:0;
+    left: 7rem;
+    opacity: 1;
+    padding: 16px;
+    height: 100%;
+    border-radius: 5px;
+    cursor: grabbing;
+    background: black;
+    z-index: 11;
+    
+    &:hover {
+      border-left: 1px dotted dodgerblue;
+    }
+  }
+}
+
+.container {
+    margin-left: 120px;
+    width: 92.5%;
+    height: 98.5vh;
+    background-color: variables.$skin-background;
+    border-radius:2rem;
+    padding: 2rem;
+    padding-top: 3rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+}
+
+@import './mediascreen/tablet.module.scss';

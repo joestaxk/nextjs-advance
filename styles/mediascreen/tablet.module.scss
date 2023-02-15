@@ -1,0 +1,209 @@
+@use "./variables.module.scss";
+
+@media screen and (max-width: variables.$minilaptop) {
+    .topArtist, .trendingNow {
+        h2 {
+            font-size: 1.4em;
+        }
+    }
+    
+    .artist, .trending  {
+        .artist_data, .trending_data{
+            .artist_info, .trending_info {
+                h3 {
+                    font-size: 1.1rem;
+                }
+                .trending_records {
+                    div {
+                     font-size: .8rem;
+                    }
+                }
+            } 
+        }
+        
+        .trending_music_info {
+            div {
+                font-size: .8rem;
+            }
+        }
+    }
+}
+
+
+// Tablet
+@media screen and (max-width: variables.$tabletlg) {
+
+    .mainBody {
+        .grab {
+            background: teal;
+            position: relative;
+            left: 6rem;
+        }
+        .container {
+            // width: 100%;
+            margin-left: 100px;
+            padding: 16px;
+        }
+    }
+    
+    .side_container {
+        width: 100px;
+    }
+    
+    .trending {
+        .trending_data {
+            .trending_numbering {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    
+    .carousel {
+        .carousel_item {
+            .carousel_title {
+                font-size: clamp(1vw, 8.5rem, 2.5rem);
+            }
+        }
+    }
+
+    
+    .homeComponentGrid {
+        padding: 10px;
+        
+    }
+    
+}
+
+
+@media screen and (max-width: variables.$tabletx) {
+    .homeComponentGrid {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    .pagePanel {
+        .header {
+            h2 {
+                font-size: 1.5rem;
+                margin-left: 1rem;
+            }
+        }
+    }
+    
+    
+    // side panel 
+
+    .sidepanel_component {
+        width: 400px;
+        .sidepanel_composition {
+            padding-left: 0rem;
+            .sidepanel_title {
+                font-size: 1.3rem;
+            }
+            .sidepanel_icon{
+                width: 40px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        .sidepanel_next_music_list {
+            padding-left: 0rem;
+            .sidepanel_music_menu {
+                min-width: 200px;
+                min-height: 150px;
+                
+                .sidepanel_info_icon {
+                    svg {
+                        font-size: 1.3rem;
+                    }
+                }
+                
+                .sidepanel_player {
+                    .sidepanel_title {
+                        .sidepanel_bigtext {
+                            font-size: .8rem;
+                        }
+                        
+                        .sidepanel_artist {
+                            .sidepanel_staff {
+                                margin-right: .2rem;
+                            }
+                            .sidepanel_text{
+                                font-size: .6rem;
+                            }
+                        }
+                    }
+                    
+                    .sidepanel_playicon {
+                        width: 40px;
+                        height: 40px;
+                        &::after {
+                            width: 25px;
+                            height: 25px
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Music controller
+        .sidepanel_muse_controller { 
+            width: 350px;
+            min-height: 300px;
+            
+            .sidepanel_cover_photo {
+                background-size: cover;
+                height: 300px;
+            }
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: variables.$mobilexx) {
+    .side_container, .sidepanel_container {
+        display: none;
+    }
+    
+    .mainBody {
+      .grab {
+        display: none;
+      }
+      .container {
+        width: 98%;
+        margin-left: 0;
+        
+        .homeComponentGrid {
+            padding: 0;
+        }
+      }
+    }
+    
+    .pagePanel {
+        position: fixed;
+        width: 98%;
+        top: 1px;
+        left: 1px;
+        z-index: 199;
+        .header {
+            background: variables.$skin_background;
+            border-top-left-radius: 20px;
+            padding: .7rem;
+            box-shadow: 2px 5px 10px #ccc;
+        
+        }
+    }
+    
+    .homeComponentGrid {
+        margin-top: 3rem;
+        padding: 0;
+        
+        .column_one {
+            // padding: 0;
+        }
+    }
+    
+}

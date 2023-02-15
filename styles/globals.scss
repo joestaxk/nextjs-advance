@@ -1,0 +1,18 @@
+@use "./variables.module.scss";
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: variables.$nav-background;
+    overflow: hidden;
+}
+::-webkit-scrollbar {
+  background: transparent;
+  width: 0px;
+}
