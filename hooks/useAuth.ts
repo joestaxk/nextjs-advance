@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 export default function useAuth({code}:{code: string}){
     const router = useRouter()
     const [expires_in, setExpireIn] = useState(0);
-    const [access_token, setAccessToken] = useState(null);
+    const [access_token, setAccessToken] = useState<any>(null);
     const [refresh_token, setRefreshToken] = useState(null);
     
     useEffect(() => {

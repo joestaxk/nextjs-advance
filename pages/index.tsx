@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import HomeComponent from '../components/homeComponent'
 import Dashboard from './dashboard';
 
 export default function Home() {
@@ -10,10 +9,10 @@ export default function Home() {
     let params = new URLSearchParams(router.asPath.replace(router.pathname, ''));
     const code = params.get('code');
     if(!code) {
-      // router.push('/authenticate')
+      router.push('/authenticate')
     }
     setCode(code)
-  }, [])
+  }, [code])
   
   
   return (

@@ -34,6 +34,9 @@
       border-radius: 10px;
       background: transparent;
       transition: .5s cubic-bezier(0.215, 0.610, 0.355, 1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       .button {
         padding: 0 2rem;
         height: 100%;
@@ -65,5 +68,19 @@
          color: rgb(8 195 103);
          font-weight: 500
       }
+   }
+}
+
+.spin {
+   animation: spin .4s linear  .7s infinite;
+}
+
+@keyframes spin {
+   0% {
+      transform: rotate(0deg);
+   }
+   
+   100% {
+      transform: rotate(360deg);
    }
 }

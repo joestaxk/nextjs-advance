@@ -224,6 +224,18 @@
   "resolved" "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz"
   "version" "0.16.2"
 
+"@types/spotify-api@*":
+  "integrity" "sha512-HRBwiOthYAT0r/vUQlGlNTdXMnPg/CS3MzTuQKDy2PtalUDXhj0Ep9YZ4tXmL68K0j7FMcLFcYTzy7k7nVu5mg=="
+  "resolved" "https://registry.npmjs.org/@types/spotify-api/-/spotify-api-0.0.20.tgz"
+  "version" "0.0.20"
+
+"@types/spotify-web-api-node@^5.0.7":
+  "integrity" "sha512-8ajd4xS3+l4Zau1OyggPv7DjeSFEIGYvG5Q8PbbBMKiaRFD53IkcvU4Bx4Ijyzw+l+Kc09L5L+MXRj0wyVLx9Q=="
+  "resolved" "https://registry.npmjs.org/@types/spotify-web-api-node/-/spotify-web-api-node-5.0.7.tgz"
+  "version" "5.0.7"
+  dependencies:
+    "@types/spotify-api" "*"
+
 "@typescript-eslint/parser@^5.42.0":
   "integrity" "sha512-1mxNA8qfgxX8kBvRDIHEzrRGrKHQfQlbW6iHyfHYS0Q4X1af+S6mkLNtgCOsGVl8+/LUPrqdHMssAemkrQ01qg=="
   "resolved" "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-5.48.0.tgz"

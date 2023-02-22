@@ -6,6 +6,22 @@
   height: 100%;
   overflow: hidden;
   color: variables.$text-shades;
+  position: relative;
+  
+  .more_info_container { 
+   width: 100%;
+   min-height: 400px;
+   background: variables.$skin-background;
+   box-shadow: -4px 4px 16px #ccc;
+   transition: .5s all cubic-bezier(0.165, 0.84, 0.44, 1);
+   position: fixed;
+   bottom:0;
+   left: 0;
+   z-index: 9999;
+   border-top-left-radius: 40px;
+   border-top-right-radius: 40px;
+}
+
 }
 
 @mixin centered {
@@ -76,7 +92,6 @@
        
     .artist_info, .trending_info {
         margin-left: .9rem;
-        
         h3 {
            font-weight: 550;
            font-size: 1.3rem;
@@ -84,7 +99,13 @@
         
         .artist_records, .trending_records {
            display: flex;
-           div {
+           .trending_artist{
+            a{ 
+                  // text-decoration: none;
+                  color: darkgrey;
+            }
+           } 
+           div{
               margin-right: .9rem;
               color: variables.$dull-background;
               font-size: calc(1rem / 1.2);
@@ -100,8 +121,10 @@
                }
             }
         }
-        
     }
+    .trending_info {
+      width: 300px;
+   }
    }
 }
 

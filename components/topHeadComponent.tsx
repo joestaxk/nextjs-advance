@@ -47,7 +47,7 @@ export default function TopHeadComponent({title}: topHeadComponentProps) {
   
   return (
     <div className={pages.header}>
-      {/* <h2>{title}</h2> */}
+      <h2 className={pages.header_title}>{title}</h2>
       <div className={pages.mobile_icon_sidebar} id="mobile_icon_drop"> 
         <div className={pages.current_icon}>
           <div className={pages.svg_icon} data-current_icon="home">
